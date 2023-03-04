@@ -1,0 +1,9 @@
+<template>
+    <Container>
+        <SectionContainer>
+            <section>
+                <Heading>intonation-trainer</Heading>
+            </section>
+        </SectionContainer>
+    </Container>
+</template>
