@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@nuxtjs/i18n-edge": "^8.0.0-beta.10-27964275.182098b",
+    "intonation-checker": "file:intonation-checker",
     "verovio": "^3.15.0"
   }
 }
