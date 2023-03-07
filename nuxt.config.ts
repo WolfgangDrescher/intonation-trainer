@@ -7,6 +7,11 @@ export default defineNuxtConfig({
         '@nuxt/content',
         '@pinia/nuxt',
     ],
+    vite: {
+        worker: {
+            format: 'es',
+        },
+    },
     i18n: {
         strategy: 'prefix_except_default',
         locales: [
