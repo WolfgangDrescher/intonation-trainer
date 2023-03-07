@@ -44,4 +44,4 @@ jobs:
                 run: |
                     echo "$SSH_KEY" > ssh.key
                     chmod 600 ssh.key
-                    rsync -rvzP -e 'ssh -i ssh.key -p ${{ env.PORT }} -o StrictHostKeyChecking=no' dist/ $USERNAME@$HOST:intonation-trainer.wolfgangdrescher.ch --delete
+                    rsync -rvzP -e 'ssh -i ssh.key -p ${{ env.PORT }} -o StrictHostKeyChecking=no' dist/ $USERNAME@$HOST:intonation-trainer.wolfgangdrescher.ch --delete --exclude=data
