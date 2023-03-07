@@ -6,10 +6,10 @@
     "npm": ">=8.19.2"
   },
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "build": "(cd intonation-checker && npm run build) && nuxt build",
+    "dev": "(cd intonation-checker && npm run build) && nuxt dev",
+    "generate": "(cd intonation-checker && npm run build) && nuxt generate",
+    "preview": "(cd intonation-checker && npm run build) && nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
