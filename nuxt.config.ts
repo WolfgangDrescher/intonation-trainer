@@ -9,6 +9,11 @@ export default defineNuxtConfig({
         '@nuxt/content',
         '@pinia/nuxt',
     ],
+    runtimeConfig: {
+        public: {
+            dataBaseUrl: '/data/{1}/{0}',
+        },
+    },
     vite: {
         worker: {
             format: 'es',
