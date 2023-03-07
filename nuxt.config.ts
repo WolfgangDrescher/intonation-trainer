@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'node:url';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     srcDir: 'src/',
@@ -23,6 +25,16 @@ export default defineNuxtConfig({
             fallbackLocale: 'de',
             legacy: false,
             locale: 'de',
+        },
+    },
+    content: {
+        // defaultLocale: 'de',
+        sources: {
+            root: {
+                driver: 'fs',
+                // prefix: '/data',
+                base: fileURLToPath(new URL('./intonation-trainer-data', import.meta.url)),
+            },
         },
     },
 });
