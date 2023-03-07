@@ -14,6 +14,15 @@ export default defineNuxtConfig({
             format: 'es',
         },
     },
+    nitro: {
+        publicAssets: [
+            {
+                baseURL: 'data',
+                dir: fileURLToPath(new URL('./data', import.meta.url)),
+                maxAge: 3600,
+            },
+        ],
+    },
     i18n: {
         strategy: 'prefix_except_default',
         locales: [
