@@ -1,6 +1,6 @@
 <script setup>
 const { params } = useRoute();
-const { data: exercise } = await useAsyncData('exercise', () => queryContent(`/exercises/${params.id}`).findOne());
+const { data: exercise } = await useAsyncData(`/exercises/${params.id}`, () => queryContent(`/exercises/${params.id}`).findOne());
 
 const runtimeConfig = useRuntimeConfig();
 
