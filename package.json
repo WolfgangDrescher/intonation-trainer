@@ -15,7 +15,7 @@
   "devDependencies": {
     "@nuxt/content": "^2.4.3",
     "@nuxtjs/tailwindcss": "^6.4.1",
-    "nuxt": "^3.2.3"
+    "nuxt": "3.0.0"
   },
   "dependencies": {
     "@nuxtjs/i18n-edge": "^8.0.0-beta.10-27964275.182098b",
