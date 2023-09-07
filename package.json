@@ -21,6 +21,7 @@
     "@nuxtjs/i18n-edge": "^8.0.0-rc.4-28234551.f63ee58",
     "@pinia/nuxt": "^0.4.7",
     "intonation-checker": "file:intonation-checker",
+    "pinia": "^2.1.6",
     "verovio": "^3.15.0"
   }
 }
