@@ -13,7 +13,7 @@ function toggle() {
             <div class="grow flex items-center gap-4">
                 <div class="font-extrabold text-lg md:text-2xl">
                     <NuxtLink :to="localePath('/')" @click="isOpen = false">
-                        intonation-trainer
+                        {{ `${$t('app.title')} ${$t('app.subtitle')}`}}
                     </NuxtLink>
                 </div>
             </div>

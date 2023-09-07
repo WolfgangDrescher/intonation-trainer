@@ -1,3 +1,7 @@
+app.title: H.E.A.R.
+app.title.description: Hören. Erkennen. Annotieren. Repetieren.
+app.subtitle: Intonation
+app.subtitle.description: Eine Übeanwendung zum Erkennen von gespielten Fehlern in Kammermusikaufnahmen
 home: Startseite
 about: Über das Projekt
 exercises: Übungen
