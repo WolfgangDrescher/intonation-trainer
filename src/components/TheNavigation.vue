@@ -18,6 +18,7 @@ function onClick() {
             <div class="w-full md:block md:w-auto">
                 <ul class="flex flex-col md:flex-row md:space-x-8">
                     <NavigationItem :href="localePath('index')" @click="onClick">{{ $t('home') }}</NavigationItem>
+                    <NavigationItem :href="localePath('about')" @click="onClick">{{ $t('about') }}</NavigationItem>
                     <NavigationItem :href="localePath('exercises')" @click="onClick">{{ $t('exercises') }}</NavigationItem>
                 </ul>
             </div>
