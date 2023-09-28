@@ -8,6 +8,7 @@ export default defineNuxtConfig({
         '@nuxtjs/i18n-edge',
         '@nuxt/content',
         '@pinia/nuxt',
+        'nuxt-icon',
     ],
     runtimeConfig: {
         public: {
