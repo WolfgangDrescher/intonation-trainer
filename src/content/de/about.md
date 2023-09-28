@@ -1,6 +1,6 @@
 ## Warum?
 
-Das Erkennen von gespielten Fehlern ist für Musiker*innen im Klassikbereich eine
+Das Erkennen von gespielten Fehlern ist für Musiker\*innen im Klassikbereich eine
 wichtige Fähigkeit. Sie wird gebraucht beim Proben und Unterrichten, besonders
 aber in Aufnahmesituationen muss das Aufnahmeteam sicher Schwächen benennen
 können, möglichst auch mit einer qualitativen Bewertung („Was ist passiert?“),
@@ -31,7 +31,7 @@ Selbststudium nur bedingt geeignet, obwohl sich bei Auflösung Hinweise zu der
 Art und Entstehung der Intonationsfehler finden. Der effektivste Einsatz dieses
 Hörarchivs wäre im Kleingruppenunterricht mit Lehrenden und Studierenden oder in
 der Diskussion innerhalb einer Gruppe von Hörenden – etwa in einer Mischung von
-Kammermusiker*innen und Tonmeister*innen.
+Kammermusiker\*innen und Tonmeister\*innen.
 
 
 ## Gebrauchsanweisung
