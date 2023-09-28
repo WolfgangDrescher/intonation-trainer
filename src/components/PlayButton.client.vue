@@ -63,7 +63,7 @@ function toggle() {
 </script>
 
 <template>
-    <div @click="toggle">
+    <div @click="toggle" class="cursor-pointer">
         <Icon v-if="isPlaying" name="heroicons:pause-circle-solid" />
         <Icon v-else name="heroicons:play-circle-solid" />
     </div>
