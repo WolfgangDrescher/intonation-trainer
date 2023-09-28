@@ -2,7 +2,7 @@
 const { params } = useRoute();
 const localePath = useLocalePath();
 const { data: exercise } = await useAsyncData(`/exercises/${params.id}`, () => queryContent(`/exercises/${params.id}`).findOne());
-
+const { data } = await useAsyncData(`/api${exercise.value._path}/${exercise.value.variants[0].id}`, () => $fetch(`/api${exercise.value._path}/${exercise.value.variants[0].id}`));
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const { data: exercise } = await useAsyncData(`/exercises/${params.id}`, () => q
                 <Heading>{{ exercise.title }}</Heading>
                 <div v-if="exercise.variants.length === 1" class="lg:h-[1000px]">
                     <IntonationChecker
-                        :url="`/api${exercise._path}/${exercise.variants[0].id}`"
+                        :data="data"
                         locale="de"
                     />
                 </div>

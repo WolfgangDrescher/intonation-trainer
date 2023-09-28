@@ -11,6 +11,8 @@ if (!variant) {
         statusMessage: `Variant ${params.variant} does not esist for ${params.id}`,
     });
 }
+
+const { data } = await useAsyncData(`/api${exercise.value._path}/${variant.id}`, () => $fetch(`/api${exercise.value._path}/${variant.id}`));
 </script>
 
 <template>
@@ -25,7 +27,7 @@ if (!variant) {
                 </div>
                 <div class="lg:h-[1000px]">
                     <IntonationChecker
-                        :url="`/api${exercise._path}/${variant.id}`"
+                        :data="data"
                         locale="de"
                     />
                 </div>
