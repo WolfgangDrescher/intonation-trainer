@@ -1,5 +1,7 @@
 <script setup>
 const { data } = await useAsyncData('exercises', () => queryContent('/exercises').find());
+const localePath = useLocalePath();
+const runtimeConfig = useRuntimeConfig();
 const { t } = useI18n();
 
 const tableItems = data.value.reduce((accumulator, currentItem) => {
@@ -28,6 +30,16 @@ const tableHeaders = [
     { value: 'year', text: t('year') },
     { value: 'difficulty', text: t('difficulty') },
 ];
+
+function sprintf(format, args) {
+    return format?.replace(/{(\d+)}/g, function (match, number) {
+        return typeof args[number] != 'undefined' ? args[number] : match;
+    });
+}
+
+function buildPath(fileName, exerciseId) {
+    return sprintf(runtimeConfig.public.dataBaseUrl, [fileName, exerciseId]);
+}
 </script>
 
 <template>
@@ -37,9 +49,9 @@ const tableHeaders = [
                 <Heading>{{ $t('exercises') }}</Heading>
 
                 <DataTable :items="tableItems" :headers="tableHeaders" small>
-                    <template #[`item.audio`]>
+                    <template #[`item.audio`]="{ item }">
                         <div class="text-center">
-                            <Icon name="heroicons-solid:play" />
+                            <PlayButton :url="buildPath(item.audioFilename, item.variantId)"></PlayButton>
                         </div>
                     </template>
                     <template #[`item.title`]="{ item }">
