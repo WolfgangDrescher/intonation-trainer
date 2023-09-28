@@ -26,16 +26,24 @@ harmonischem Zusammenhang tiefer oder höher ausfallen. Siehe dazu das
 detaillierte und wohlüberlegte Lehrwerk von Doris Geller, Intonation [Titel,
 Verlag, Jahr]. Hier sind die Fehler jedoch so produziert, dass sie eindeutig und
 lokalisierbar sind. Dennoch sind einige Beispiele sicherlich an der Obergrenze
-dessen, was man noch identifizieren kann
+dessen, was man noch identifizieren kann. Deshalb ist dieses Archiv zum
+Selbststudium nur bedingt geeignet, obwohl sich bei Auflösung Hinweise zu der
+Art und Entstehung der Intonationsfehler finden. Der effektivste Einsatz dieses
+Hörarchivs wäre im Kleingruppenunterricht mit Lehrenden und Studierenden oder in
+der Diskussion innerhalb einer Gruppe von Hörenden – etwa in einer Mischung von
+Kammermusiker*innen und Tonmeister*innen.
 
 
 ## Gebrauchsanweisung
 
 Sie finden die Liste aller Literaturbeispiele hier [Link]. Angegeben sind
-Komponist, Werktitel, Satz, Taktzahl des Beginns, Besetzung sowie eine ungefähre
-Einordnung des Schwierigkeitsgrades.  Alle Ausschnitte sind als Noten im
-Open-Source Format Verovio hinterlegt. Die Aufnahmen sind per Timecode mit den
-Partituren synchronisiert.
+Komponist, Werktitel, Satz, Taktzahl des Beginns, Besetzung, Entstehungszeit
+sowie eine ungefähre Einordnung des Schwierigkeitsgrades. Die Entstehungszeit
+lässt sich nicht immer genau belegen, sie dient aber der Einordnung nach Epoche
+und Stilistik. Alle Kriterien können mit Filtern eingegrenzt werden, um die
+Suche nach gewünschten Beispielen zu erleichtern. Alle Ausschnitte sind als
+Noten im Open-Source Format Verovio hinterlegt. Die Aufnahmen sind per Timecode
+mit den Partituren synchronisiert.
 
 In einem ersten Schritt kann der Zeitpunkt gefundener Fehler markiert werden.
 Dies geschieht durch Klick auf eine Note in einer beliebigen Stimme. Die Anzahl
@@ -46,10 +54,14 @@ markiert zu haben, können Sie das Ergebnis überprüfen.
 
 In einem zweiten, sehr viel schwierigeren Schritt, können nun die konkreten Töne
 in den jeweiligen Instrumenten markiert werden. **Dabei können auch
-Freitextannotationen gemacht werden, ob die betreffenden Töne zu hoch oder zu
-tief intoniert sind.** [Eventuell könnte man auch Symbole als Annotation
+Freitextannotationen gemacht werden, z.B. ob die betreffenden Töne zu hoch oder
+zu tief intoniert sind.** [Eventuell könnte man auch Symbole als Annotation
 dazunehmen, z.B. + - Zeichen oder Pfeile?]. Auch jetzt kann das Ergebnis
 anschließend geprüft werden.
 
 In der Zusammenfassung wird Ihr Ergebnis im Sinne eines Score aufgelistet und
-die Art der Intonationsfehler (zu hoch, zu tief) wird bezeichnet.
+die Art der Intonationsfehler (zu hoch, zu tief) wird bezeichnet. Bei den
+meisten Beispielen finden Sie Angaben zur Problematik der Fehlerquellen. Diese
+verstehen sich allerdings nur als Anregung zur Diskussion. Zur Theorie der
+Stimmungssysteme und Intonation im Ensemble suchen Sie bitte weiterführende
+Literatur und Quellen (z.B. Geller, Bowman/Terry etc.).
