@@ -1,11 +1,12 @@
 ## Warum?
 
-Das Erkennen von gespielten Fehlern ist für Musiker\*innen im Klassikbereich eine
-wichtige Fähigkeit. Sie wird gebraucht beim Proben und Unterrichten, besonders
-aber in Aufnahmesituationen muss das Aufnahmeteam sicher Schwächen benennen
-können, möglichst auch mit einer qualitativen Bewertung („Was ist passiert?“),
-damit die Fehler korrigiert werden können. Wie peinlich sind auf Tonträger
-verewigte Patzer oder Ungenauigkeiten, die man immer wieder hören muss…
+Das Erkennen von gespielten Fehlern ist für Musiker\*innen im Klassikbereich
+eine wichtige Fähigkeit. Sie wird gebraucht beim Proben und Unterrichten,
+besonders aber in Aufnahmesituationen muss das Aufnahmeteam sicher Schwächen
+benennen können, möglichst auch mit einer qualitativen Bewertung („Was ist
+passiert?“), damit die Fehler korrigiert werden können. Wie peinlich sind auf
+Tonträger verewigte Patzer oder Ungenauigkeiten, die man immer wieder hören
+muss…
 
 Diese Anwendung versteht sich als Ergänzung zum klassischen
 Gehörbildungsunterricht, in dem kaum Fehlerhören im Ensemble trainiert werden
