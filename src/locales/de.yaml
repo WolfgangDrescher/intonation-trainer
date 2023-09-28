@@ -11,3 +11,5 @@ composer: Komponist
 year: Jahr
 difficulty: Schwierigkeitsgrad
 instrumentation: Besetzung
+'instrumentation.2Vl': 2 Vl
+'instrumentation.Fl,Ob,Kl,Hr,Fg': Fl, Ob, Kl, Hr, Fg

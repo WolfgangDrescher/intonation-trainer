@@ -16,7 +16,8 @@ const tableItems = data.value.reduce((accumulator, currentItem) => {
             difficulty: currentItem.difficulty,
             audioFilename: currentItem.audioFilename,
             variantAudioFilename: variant.audioFilename,
-            instrumentation: currentItem.instrumentation
+            instrumentation: currentItem.instrumentation,
+            sluggifyInstrumentation: sluggifyInstrumentation(currentItem.instrumentation),
         });
     });
     return accumulator;
@@ -26,7 +27,7 @@ const tableHeaders = [
     { value: 'audio', text: '', align: 'center' },
     { value: 'composer', text: t('composer') },
     { value: 'title', text: t('title') },
-    { value: 'instrumentation', text: t('instrumentation') },
+    { value: 'sluggifyInstrumentation', text: t('instrumentation') },
     { value: 'year', text: t('year') },
 ];
 
@@ -48,6 +49,9 @@ function buildPath(fileName, exerciseId) {
                 <Heading>{{ $t('exercises') }}</Heading>
 
                 <DataTable :items="tableItems" :headers="tableHeaders" small>
+                    <template #[`item.sluggifyInstrumentation`]="{ item }">
+                        {{ item.sluggifyInstrumentation && $t(`instrumentation.${item.sluggifyInstrumentation}`) }}
+                    </template>
                     <template #[`item.audio`]="{ item }">
                         <div class="text-center">
                             <PlayButton :url="buildPath(item.audioFilename, item.variantId)"></PlayButton>
