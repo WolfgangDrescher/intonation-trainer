@@ -5,3 +5,8 @@ app.subtitle.description: Eine Übeanwendung zum Erkennen von gespielten Fehlern
 home: Startseite
 about: Über das Projekt
 exercises: Übungen
+variantName: Variante {name}
+title: Titel
+composer: Komponist
+year: Jahr
+difficulty: Schwierigkeitsgrad
