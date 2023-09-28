@@ -28,7 +28,6 @@ const tableHeaders = [
     { value: 'title', text: t('title') },
     { value: 'instrumentation', text: t('instrumentation') },
     { value: 'year', text: t('year') },
-    { value: 'difficulty', text: t('difficulty') },
 ];
 
 function sprintf(format, args) {
