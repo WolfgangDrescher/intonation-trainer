@@ -16,7 +16,7 @@ const tableItems = data.value.reduce((accumulator, currentItem) => {
             difficulty: currentItem.difficulty,
             audioFilename: currentItem.audioFilename,
             variantAudioFilename: variant.audioFilename,
-            instrumentation: 'TODO'
+            instrumentation: currentItem.instrumentation
         });
     });
     return accumulator;
@@ -26,7 +26,7 @@ const tableHeaders = [
     { value: 'audio', text: '', align: 'center' },
     { value: 'composer', text: t('composer') },
     { value: 'title', text: t('title') },
-    { value: 'instrumentation', text: 'instrumentation' },
+    { value: 'instrumentation', text: t('instrumentation') },
     { value: 'year', text: t('year') },
     { value: 'difficulty', text: t('difficulty') },
 ];
