@@ -3,21 +3,7 @@ const { data } = await useAsyncData('exercises', () => queryContent('/exercises'
 const localePath = useLocalePath();
 const runtimeConfig = useRuntimeConfig();
 const { t } = useI18n();
-
-const tableItems = data.value.map((item) => {
-    return {
-        _path: item._path,
-        id: item._path.split('/').pop(),
-        composer: item.composer,
-        title: item.title,
-        year: item.year,
-        difficulty: item.difficulty,
-        audioFilename: item.audioFilename,
-        instrumentation: item.instrumentation,
-        sluggifyInstrumentation: sluggifyInstrumentation(item.instrumentation),
-        variants: item.variants,
-    };
-});
+import { storeToRefs } from 'pinia'
 
 const tableHeaders = [
     { value: 'audio', text: '', align: 'center' },
@@ -36,6 +22,27 @@ function sprintf(format, args) {
 function buildPath(fileName, exerciseId) {
     return sprintf(runtimeConfig.public.dataBaseUrl, [fileName, exerciseId]);
 }
+
+const { filteredElements } = useExerciseFilter(data.value);
+
+const tableItems = computed(() => {
+    return filteredElements.value.map(item => {
+        return {
+            _path: item._path,
+            id: item._path.split('/').pop(),
+            composer: item.composer,
+            title: item.title,
+            year: item.year,
+            difficulty: item.difficulty,
+            audioFilename: item.audioFilename,
+            instrumentation: item.instrumentation,
+            sluggifyInstrumentation: sluggifyInstrumentation(item.instrumentation),
+            variants: item.variants,
+        };
+    });
+});
+
+const { difficulty } = storeToRefs(useExerciseFilterStore());
 </script>
 
 <template>
@@ -43,6 +50,12 @@ function buildPath(fileName, exerciseId) {
         <SectionContainer>
             <section>
                 <Heading>{{ $t('exercises') }}</Heading>
+
+                <ExerciseFilter />
+
+                <div class="my-4 flex items-center">
+                    {{ $t('nOutOfTotalExercisesFoundForSerachParams', { n: filteredElements.length, total: data.length }) }}
+                </div>
 
                 <DataTable :items="tableItems" :headers="tableHeaders" small>
                     <template #[`item.sluggifyInstrumentation`]="{ item }">
@@ -66,11 +79,13 @@ function buildPath(fileName, exerciseId) {
                             </NuxtLink>
                         </div>
                         <div v-if="item.variants.length > 1" class="text-xs flex gap-2">
-                            <div v-for="variant in item.variants">
-                                <NuxtLink :href="localePath({ name: 'exercises-id-variant', params: { id: item.id, variant: variant.id } })">
-                                    {{ $t('variantName', {name: variant.id}) }}
-                                </NuxtLink>
-                            </div>
+                            <template v-for="variant in item.variants">
+                                <div v-if="!difficulty || parseInt(difficulty, 10) === variant.difficulty">
+                                    <NuxtLink :href="localePath({ name: 'exercises-id-variant', params: { id: item.id, variant: variant.id } })">
+                                        {{ $t('variantName', {name: variant.id}) }}
+                                    </NuxtLink>
+                                </div>
+                            </template>
                         </div>
                     </template>
                 </DataTable>
