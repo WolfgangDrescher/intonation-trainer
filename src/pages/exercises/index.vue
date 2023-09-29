@@ -73,10 +73,6 @@ function buildPath(fileName, exerciseId) {
                             </div>
                         </div>
                     </template>
-                    <template #[`item.difficulty`]="{ item }">
-                        <Icon v-for="n in (item.difficulty ?? 0)" name="heroicons:star-solid" />
-                        <Icon v-for="n in 3 - (item.difficulty ?? 0)" name="heroicons:star" />
-                    </template>
                 </DataTable>
             </section>
         </SectionContainer>

@@ -17,7 +17,7 @@ const { data } = await useAsyncData(`/api${exercise.value._path}/${exercise.valu
                     />
                 </div>
                 <div v-else class="flex gap-4 my-4">
-                    <VariantButton v-for="variant in exercise.variants" :href="localePath({ name: 'exercises-id-variant', params: { id: exercise.id, variant: variant.id } })">
+                    <VariantButton v-for="variant in exercise.variants" :href="localePath({ name: 'exercises-id-variant', params: { id: exercise.id, variant: variant.id } })" :difficulty="variant.difficulty">
                         {{ $t('variantName', { name: variant.id }) }}
                     </VariantButton>
                 </div>
