@@ -12,7 +12,7 @@ if (!variant) {
     });
 }
 
-const { data } = await useAsyncData(`/api${exercise.value._path}/${variant.id}`, () => $fetch(`/api${exercise.value._path}/${variant.id}`));
+const { data } = await useFetch(`/api${exercise.value._path}/${variant.id}`);
 </script>
 
 <template>

@@ -2,7 +2,7 @@
 const { params } = useRoute();
 const localePath = useLocalePath();
 const { data: exercise } = await useAsyncData(`/exercises/${params.id}`, () => queryContent(`/exercises/${params.id}`).findOne());
-const { data } = await useAsyncData(`/api${exercise.value._path}/${exercise.value.variants[0].id}`, () => $fetch(`/api${exercise.value._path}/${exercise.value.variants[0].id}`));
+const { data } = await useFetch(`/api${exercise.value._path}/${exercise.value.variants[0].id}`);
 </script>
 
 <template>
