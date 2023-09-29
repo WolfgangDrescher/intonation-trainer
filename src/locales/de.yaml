@@ -13,6 +13,7 @@ difficulty: Schwierigkeitsgrad
 instrumentation: Besetzung
 'instrumentation.2Vl': 2 Vl
 'instrumentation.Fl,Ob,Kl,Hr,Fg': Fl, Ob, Kl, Hr, Fg
+'instrumentation.2Vl,Va,Vc': 2 Vl, Va, Vc
 nOutOfTotalExercisesFoundForSerachParams: '{n} von {total} Übungen gefunden'
 searchText: Suchtext
 clear: Zurücksetzen
