@@ -43,6 +43,12 @@ const tableItems = computed(() => {
 });
 
 const { difficulty } = storeToRefs(useExerciseFilterStore());
+
+const variantCount = computed(() => {
+    return filteredElements.value.reduce((total, exercise) => total + (difficulty.value ? exercise.variants.filter(v => v.difficulty === parseInt(difficulty.value, 10)).length : exercise.variants.length), 0);
+});
+
+const variantTotal = data.value.reduce((total, exercise) => total + exercise.variants.length, 0);
 </script>
 
 <template>
@@ -54,7 +60,12 @@ const { difficulty } = storeToRefs(useExerciseFilterStore());
                 <ExerciseFilter />
 
                 <div class="my-4 flex items-center">
-                    {{ $t('nOutOfTotalExercisesFoundForSerachParams', { n: filteredElements.length, total: data.length }) }}
+                    {{ $t('nOutOfTotalExercisesFoundForSerachParams', {
+                        n: filteredElements.length,
+                        total: data.length,
+                        variantCount,
+                        variantTotal, 
+                    }) }}
                 </div>
 
                 <DataTable :items="tableItems" :headers="tableHeaders" small>
