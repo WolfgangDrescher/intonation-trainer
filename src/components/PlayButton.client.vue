@@ -84,6 +84,10 @@ const circlePath = computed(() => {
     const { x, y }  = getCoords(radius - strokeWidth / 2, audioSeekAngle.value ?? 0);
     return `M ${radius} ${strokeWidth / 2} A ${radius - strokeWidth / 2} ${radius - strokeWidth / 2} 0 ${audioSeekAngle.value > 180 ? 1 : 0} ${audioSeekAngle.value > 0 ? 1 : 0} ${radius + x} ${radius - y}`;
 });
+
+onUnmounted(() => {
+    howlerStore.remove(props.url);
+});
 </script>
 
 <template>

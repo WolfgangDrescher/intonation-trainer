@@ -17,6 +17,10 @@ export const useHowlerStore = defineStore('howler', {
             this.instances.push(instance);
             return instance;
         },
+        remove(url) {
+            this.getHowlerByUrl(url).stop();
+            this.instances = this.instances.filter(i => i.url !== url);
+        },
         play(url) {
             this.instances.forEach((instance) => {
                 instance.howler.stop();
