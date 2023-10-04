@@ -1,6 +1,6 @@
-const { purple } = require('tailwindcss/colors');
+import { purple } from 'tailwindcss/colors';
 
-module.exports = {
+export default {
     content: [
         './src/layouts/**.{vue,html,js}',
         './src/components/**/*.{vue,html,js}',
