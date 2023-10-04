@@ -41,7 +41,7 @@ const maxYear = new Date().getFullYear();
                 <FormInputField :model-value="filter.searchText" @update:model-value="updateFilter('searchText', $event)" :label="$t('searchText')" :placeholder="$t('titleComposerYear')" />
             </div>
             <div>
-                <FormDropdown :model-value="filter.composer" @update:model-value="updateFilter('composer', $event)" :label="$t('composer')" :options="composerOptions" :search-enabled="false" />
+                <FormDropdown :model-value="filter.composer" @update:model-value="updateFilter('composer', $event)" :label="$t('composer')" :options="composerOptions" :search-enabled="true" />
             </div>
             <div>
                 <FormDropdown :model-value="filter.difficulty" @update:model-value="updateFilter('difficulty', $event)" :label="$t('difficulty')" :options="difficultyOptions" :search-enabled="false" />
