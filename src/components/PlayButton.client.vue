@@ -87,15 +87,17 @@ const circlePath = computed(() => {
 </script>
 
 <template>
-    <div @click="toggle" class="cursor-pointer text-primary-500 relative flex items-center text-lg">
-        <Icon v-if="isPlaying" name="heroicons:pause-circle-solid" />
-        <Icon v-else name="heroicons:play-circle-solid" />
-        <div class="absolute z-1 w-[1.2em] h-[1.2em] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center">
-            <svg :viewBox="`0 0 ${radius * 2} ${radius * 2}`" class="w-full h-full">
-                <g :stroke="primary500" fill="none" :stroke-width="strokeWidth">
-                    <path :d="circlePath" />
-                </g>
-            </svg>
+    <div class="w-[1em] flex justify-center">
+        <div v-if="duration" @click="toggle" class="cursor-pointer text-primary-500 relative flex items-center text-lg">
+            <Icon v-if="isPlaying" name="heroicons:pause-circle-solid" />
+            <Icon v-else name="heroicons:play-circle-solid" />
+            <div class="absolute z-1 w-[1.2em] h-[1.2em] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center">
+                <svg :viewBox="`0 0 ${radius * 2} ${radius * 2}`" class="w-full h-full">
+                    <g :stroke="primary500" fill="none" :stroke-width="strokeWidth">
+                        <path :d="circlePath" />
+                    </g>
+                </svg>
+            </div>
         </div>
     </div>
 </template>
