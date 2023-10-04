@@ -1,15 +1,13 @@
 <script setup>
-import { Howl } from 'howler';
 
 const props = defineProps({
     url: String,
     keyboardShortcuts: Boolean,
 });
 
-const audio = new Howl({
-    src: [props.url],
-    html5: true, // allow playing audio on muted phones
-});
+const howlerStore = useHowlerStore();
+
+const audio = howlerStore.add(props.url).howler;
 
 const isReady = ref(false);
 const isPlaying = ref(false);
@@ -54,10 +52,9 @@ function updateLoop() {
 function toggle() {
     if (audio.state() !== 'loaded') return;
     if (audio.playing()) {
-        audio.pause();
-        audio.stop();
+        howlerStore.stop(props.url);
     } else {
-        audio.play();
+        howlerStore.play(props.url);
     }
 }
 </script>
