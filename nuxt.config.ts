@@ -9,6 +9,7 @@ export default defineNuxtConfig({
         '@nuxt/content',
         '@pinia/nuxt',
         'nuxt-icon',
+        '@nuxtjs/google-fonts',
     ],
     runtimeConfig: {
         public: {
@@ -49,6 +50,20 @@ export default defineNuxtConfig({
                 branch: 'master',
                 prefix: '/exercises',
                 dir: "exercises",
+            },
+        },
+    },
+    googleFonts: {
+        stylePath: 'css/fonts.css',
+        download: true,
+        preload: true,
+        prefetch: true,
+        preconnect: true,
+        display: 'swap',
+        families: {
+            'Vollkorn': {
+                wght: [400, 700],
+                ital: [400],
             },
         },
     },
