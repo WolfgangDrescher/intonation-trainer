@@ -73,11 +73,11 @@ function getValue(value) {
 }
 
 const progressLeft = computed(() => {
-    return 100 / (props.max - props.min) * tmpValue.value[0] - (100 / (props.max - props.min) * props.min);
+    return Math.max(0, 100 / (props.max - props.min) * tmpValue.value[0] - (100 / (props.max - props.min) * props.min));
 });
 
 const progressRight = computed(() => {
-    return 100 / (props.max - props.min) * tmpValue.value[1] - (100 / (props.max - props.min) * props.min);
+    return Math.min(100, 100 / (props.max - props.min) * tmpValue.value[1] - (100 / (props.max - props.min) * props.min));
 });
 
 function isTouchDevice() {
