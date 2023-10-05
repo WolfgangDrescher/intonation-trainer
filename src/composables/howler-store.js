@@ -12,20 +12,31 @@ export const useHowlerStore = defineStore('howler', {
                 howler: new Howl({
                     src: [url],
                     html5: true, // allow playing audio on muted phones
+                    preload: false,
                 }),
             };
             this.instances.push(instance);
             return instance;
         },
         remove(url) {
-            this.getHowlerByUrl(url).stop();
+            this.getHowlerByUrl(url)?.unload();
             this.instances = this.instances.filter(i => i.url !== url);
         },
         play(url) {
             this.instances.forEach((instance) => {
                 instance.howler.stop();
             });
-            this.getHowlerByUrl(url).play();
+            const howler = this.getHowlerByUrl(url);
+            if (howler.state() === 'loaded') {
+                howler.play();
+            } else if (howler.state() === 'unloaded') {
+                howler.load();
+                howler.once('load', () => {
+                    if (!howler.playing()) {
+                        howler.play();
+                    }
+                });
+            }
         },
         stop(url) {
             this.getHowlerByUrl(url).stop();

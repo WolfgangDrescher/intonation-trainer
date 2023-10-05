@@ -13,18 +13,19 @@ const howlerStore = useHowlerStore();
 
 const audio = howlerStore.add(props.url).howler;
 
-const isReady = ref(false);
 const isPlaying = ref(false);
 const seek = ref(0);
 const duration = ref(0);
-
-if (audio.state() === 'loaded') {
-    isReady.value = true;
-}
+const state = ref(audio.state());
 
 audio.on('load', () => {
+    state.value = 'loaded';
     // isReady.value = true;
     duration.value = audio.duration();
+});
+
+audio.on('loaderror', () => {
+    state.value = 'loaderror';
 });
 
 audio.on('play', () => {
@@ -56,7 +57,10 @@ function updateLoop() {
 }
 
 function toggle() {
-    if (audio.state() !== 'loaded') return;
+    if (state.value === 'loaderror') return;
+    if (state.value === 'unloaded') {
+        state.value = 'loading';
+    }
     if (audio.playing()) {
         howlerStore.stop(props.url);
     } else {
@@ -92,16 +96,43 @@ onUnmounted(() => {
 
 <template>
     <div class="w-[1em] flex justify-center">
-        <div v-if="duration" @click="toggle" class="cursor-pointer text-primary-500 relative flex items-center text-lg">
-            <Icon v-if="isPlaying" name="heroicons:pause-circle-solid" />
-            <Icon v-else name="heroicons:play-circle-solid" />
-            <div class="absolute z-1 w-[1.2em] h-[1.2em] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center">
-                <svg :viewBox="`0 0 ${radius * 2} ${radius * 2}`" class="w-full h-full">
-                    <g :stroke="primary500" fill="none" :stroke-width="strokeWidth">
-                        <path :d="circlePath" />
-                    </g>
-                </svg>
+        <div class="text-primary-500 flex items-center text-lg">
+            <div v-if="state === 'loaderror'" class="text-red-500 flex items-center">
+                <Icon name="heroicons:exclamation-triangle-solid" />
+            </div>
+            <div v-else-if="isPlaying" class="relative cursor-pointer flex items-center" @click="toggle">
+                <Icon name="heroicons:pause-circle-solid" />
+                <div class="absolute z-1 pointer-events-none w-[1.2em] h-[1.2em] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <svg :viewBox="`0 0 ${radius * 2} ${radius * 2}`" class="w-full h-full">
+                        <g :stroke="primary500" fill="none" :stroke-width="strokeWidth">
+                            <path :d="circlePath" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div v-else-if="state === 'loading'" class="flex items-center">
+                <Icon name="heroicons:arrow-path" class="inline-block spin" />
+            </div>
+            <div v-else class="cursor-pointer flex items-center" @click="toggle">
+                <Icon name="heroicons:play-circle-solid" />
             </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+.spin {
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+</style>
