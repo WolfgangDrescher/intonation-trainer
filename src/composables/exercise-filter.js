@@ -23,8 +23,9 @@ const filterByTitle = (title, element) => {
 };
 
 const filterByYear = ([min, max], element) => {
-    if (!min || !max) return true;
-    const year = element.year ?? 0
+    if (typeof min !== 'number' || typeof max !== 'number') return true;
+    const year = parseInt(`${element.year}`.replaceAll(/\D/g, '') || 0, 10);
+    // if (isNaN(year)) return false;
     return year >= min && year <= max;
 };
 
