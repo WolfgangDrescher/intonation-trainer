@@ -18,10 +18,6 @@ const draggedIndex = ref();
 const progressBarElem = ref();
 const isDragging = ref(false);
 
-function seekHandler(e) {
-    const rect = e.target.getBoundingClientRect();
-    emit('update:modelValue', buildModelValue(getValue((e.clientX - rect.left) / rect.width)));
-}
 
 function whileMoveMouse(e) {
     e.stopPropagation();
@@ -97,7 +93,6 @@ onMounted(() => {
             ref="progressBarElem"
             class="relative flex-grow h-1 bg-gray-200 cursor-pointer rounded"
             :style="`--progressLeft: ${progressLeft}%; --progressRight: ${progressRight}%`"
-            @mouseup="seekHandler"
         >
             <div class="pointer-events-none bg-primary-500 rounded h-full absolute top-0" style="width: calc(var(--progressRight) - var(--progressLeft)); left: var(--progressLeft);"></div>
             <div
