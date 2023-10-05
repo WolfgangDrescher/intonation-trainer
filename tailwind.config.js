@@ -1,4 +1,5 @@
 import { purple } from 'tailwindcss/colors';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -11,6 +12,10 @@ export default {
         extend: {
             colors: {
                 primary: purple,
+            },
+            fontFamily: {
+                ...fontFamily,
+                serif: ['Vollkorn', 'serif'],
             },
         },
         container: {
