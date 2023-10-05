@@ -5,7 +5,7 @@ export const useHowlerStore = defineStore('howler', {
     state: () => ({ instances: [] }),
     actions: {
         add(url) {
-            const found = this.getHowlerByUrl(url);
+            const found = this.getInstanceByUrl(url);
             if (found) return found;
             const instance = {
                 url,
@@ -44,5 +44,6 @@ export const useHowlerStore = defineStore('howler', {
     },
     getters: {
         getHowlerByUrl: (state) => (url) => state.instances.find(i => i.url === url)?.howler ?? null,
+        getInstanceByUrl: (state) => (url) => state.instances.find(i => i.url === url) ?? null,
     },
 });
