@@ -53,7 +53,7 @@ const fields = computed(() => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="(item, j) in items" :key="j" class="bg-white border-b border-gray-200">
+                                <tr v-for="(item, j) in items" :key="item.id ?? j" class="bg-white border-b border-gray-200">
                                     <td v-for="(field, k) in fields" :key="k" class="whitespace-nowrap" :class="small ? 'py-2 px-3 ' : 'py-4 px-6'">
                                         <slot :name="`item.${field.value}`" :item="item" :index="j">
                                             <span v-text="item[field.value]"></span>
@@ -70,7 +70,7 @@ const fields = computed(() => {
                                             {{ field.text }}
                                         </slot>
                                     </th>
-                                    <td v-for="(item, k) in items" :key="k" class="whitespace-nowrap" :class="small ? 'py-2 px-3 ' : 'py-4 px-6'">
+                                    <td v-for="(item, k) in items" :key="item.id ?? k" class="whitespace-nowrap" :class="small ? 'py-2 px-3 ' : 'py-4 px-6'">
                                         <slot :name="`item.${field.value}`" :item="item">
                                             <span v-text="item[field.value]"></span>
                                         </slot>
