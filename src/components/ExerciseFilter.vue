@@ -28,10 +28,10 @@ const difficultyOptions = [
     { value: '3', text: '★★★' },
  ];
 
-// const minYear = exercisesData.value.map(e => e.year).min();
-// const maxYear = exercisesData.value.map(e => e.year).max();
-const minYear = 0;
-const maxYear = new Date().getFullYear();
+const years = toRaw(exercisesData.value).map(e => parseInt(`${e.year}`.replaceAll(/\D/g, '') || 0, 10)).filter(y => y);
+
+const minYear = Math.min(...years);
+const maxYear = Math.max(...years);
 </script>
 
 <template>
