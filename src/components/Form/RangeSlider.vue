@@ -17,7 +17,11 @@ const draggedIndex = ref();
 
 const progressBarElem = ref();
 const isDragging = ref(false);
+const tmpValue = ref(props.modelValue);
 
+watch(() => props.modelValue, (value) => {
+    tmpValue.value = toRaw(value)
+});
 
 function whileMoveMouse(e) {
     e.stopPropagation();
@@ -34,14 +38,14 @@ function whileMoveTouch(e) {
 function setValueFromClientX(clientX) {
     const rect = progressBarElem.value.getBoundingClientRect();
     const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
-    emit('update:modelValue', buildModelValue(getValue(x / rect.width)));
+    tmpValue.value = buildModelValue(getValue(x / rect.width));
 }
 
 function buildModelValue(value) {
     if (draggedIndex.value === 0) {
-        return [value, props.modelValue[1]]
+        return [value, tmpValue.value[1]]
     }
-    return [props.modelValue[0], value];
+    return [tmpValue.value[0], value];
 }
 
 function endMove(event) {
@@ -51,6 +55,7 @@ function endMove(event) {
     window.removeEventListener('touchmove', whileMoveTouch);
     window.removeEventListener('touchend', endMove, true);
     isDragging.value = false;
+    emit('update:modelValue', tmpValue.value);
 }
 
 function onMousedownEvent(event, index) {
@@ -68,11 +73,11 @@ function getValue(value) {
 }
 
 const progressLeft = computed(() => {
-    return 100 / (props.max - props.min) * props.modelValue[0] - (100 / (props.max - props.min) * props.min);
+    return 100 / (props.max - props.min) * tmpValue.value[0] - (100 / (props.max - props.min) * props.min);
 });
 
 const progressRight = computed(() => {
-    return 100 / (props.max - props.min) * props.modelValue[1] - (100 / (props.max - props.min) * props.min);
+    return 100 / (props.max - props.min) * tmpValue.value[1] - (100 / (props.max - props.min) * props.min);
 });
 
 function isTouchDevice() {
@@ -106,7 +111,7 @@ onMounted(() => {
                 @touchstart="onMousedownEvent($event, 0)"
             >
                 <div class="progress-number hidden whitespace-nowrap group-hover/left:block absolute bg-primary-500 text-white text-xs leading-4 px-1 rounded bottom-full -translate-x-1/2 left-1/2 mb-1">
-                    {{ modelValue[0] }} 
+                    {{ tmpValue[0] }} 
                 </div>
             </div>
 
@@ -121,7 +126,7 @@ onMounted(() => {
                 @touchstart="onMousedownEvent($event, 1)"
             >
                 <div class="progress-number hidden whitespace-nowrap group-hover/right:block absolute bg-primary-500 text-white text-xs leading-4 px-1 rounded bottom-full -translate-x-1/2 left-1/2 mb-1">
-                    {{ modelValue[1] }} 
+                    {{ tmpValue[1] }} 
                 </div>
             </div>
         </div>
