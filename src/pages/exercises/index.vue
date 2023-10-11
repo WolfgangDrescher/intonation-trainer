@@ -77,11 +77,6 @@ const variantTotal = data.value.reduce((total, exercise) => total + exercise.var
                             <PlayButton :url="buildPath(item.audioFilename, item.id)"></PlayButton>
                         </div>
                     </template>
-                    <template #[`item.audio`]="{ item }">
-                        <div class="text-center">
-                            <PlayButton :url="buildPath(item.audioFilename, item.id)"></PlayButton>
-                        </div>
-                    </template>
                     <template #[`item.title`]="{ item }">
                         <!-- <NuxtLink :href="localePath({ name: 'exercises-id-variant', params: { id: item.id, variant: item.variantId } })"> -->
                         <div>
