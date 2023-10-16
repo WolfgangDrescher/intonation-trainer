@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@nuxtjs/i18n-edge": "^8.0.0-rc.5-28274558.b818011",
-    "@pinia/nuxt": "^0.4.7",
+    "@pinia/nuxt": "^0.5.0",
     "howler": "^2.2.4",
     "intonation-checker": "file:intonation-checker",
     "pinia": "^2.1.6",
