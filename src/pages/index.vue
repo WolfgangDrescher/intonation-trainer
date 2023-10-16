@@ -10,6 +10,11 @@
                 <div class="my-6"><Subheading>{{ $t('app.subtitle') }}</Subheading></div>
                 <p>{{ $t('app.subtitle.description') }}</p>
             </section>
+            <section>
+                <div class="flex justify-center">
+                    <img src="@/assets/rsh-logo-print.png" alt="Robert Schumann Hochschule Düsseldorf" />
+                </div>
+            </section>
         </SectionContainer>
     </Container>
 </template>
