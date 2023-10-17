@@ -12,7 +12,9 @@
             </section>
             <section>
                 <div class="flex justify-center">
-                    <img src="@/assets/rsh-logo-print.png" alt="Robert Schumann Hochschule Düsseldorf" />
+                    <div class="md:w-1/2 lg:w-1/4">
+                        <img src="@/assets/rsh-logo-print.png" alt="Robert Schumann Hochschule Düsseldorf" />
+                    </div>
                 </div>
             </section>
         </SectionContainer>
