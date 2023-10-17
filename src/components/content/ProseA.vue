@@ -19,7 +19,6 @@ a {
     color: v-bind('primaryColor');
     vertical-align: bottom;
     text-decoration: none;
-    /* white-space: nowrap; */
 }
 
 a:hover {
