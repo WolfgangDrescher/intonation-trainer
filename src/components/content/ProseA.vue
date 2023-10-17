@@ -1,8 +1,8 @@
 <script setup>
-import resolveConfig from 'tailwindcss/resolveConfig';
-import tailwindConfig from '@@/tailwind.config.js';
-
-const { theme: { colors: { primary: { ['500']: primaryColor } } } } = resolveConfig(tailwindConfig);
+// import resolveConfig from 'tailwindcss/resolveConfig';
+// import tailwindConfig from '@@/tailwind.config.js';
+// const { theme: { colors: { primary: { [500]: primaryColor } } } } = resolveConfig(tailwindConfig);
+const primaryColor = '#E2007D';
 </script>
 
 <template>
