@@ -51,6 +51,7 @@ export default defineEventHandler(async (event) => {
         difficulty: variant.difficulty,
         wrongAudioUrl: buildPath(variant.audioFilename, exercise.id),
         markers: variant.markers,
+        note: variant.note,
     }
 ;
 });
