@@ -21,7 +21,7 @@ const { data } = await useFetch(`/api${exercise.value._path}/${variant.id}`);
             <section>
                 <Heading>{{ exercise.title }}</Heading>
                 <div v-if="exercise.variants.length > 1" class="flex gap-4 my-4">
-                    <VariantButton v-for="_variant in exercise.variants" :active="variant.id === _variant.id" :href="localePath({ name: 'exercises-id-variant', params: { id: exercise.id, variant: _variant.id } })" :difficulty="variant.difficulty">
+                    <VariantButton v-for="_variant in exercise.variants" :active="variant.id === _variant.id" :href="localePath({ name: 'exercises-id-variant', params: { id: exercise.id, variant: _variant.id } })" :difficulty="_variant.difficulty">
                         {{ $t('variantName', { name: _variant.id }) }}
                     </VariantButton>
                 </div>
