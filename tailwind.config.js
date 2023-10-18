@@ -2,17 +2,17 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const rose = {
     DEFAULT: '#E2007D',
-    50: '#FF9BD2',
-    100: '#FF86C9',
-    200: '#FF5DB7',
-    300: '#FF35A5',
-    400: '#FF0C92',
+    50: '#FFFAFD',
+    100: '#FFDBEF',
+    200: '#FF9ED3',
+    300: '#FF61B8',
+    400: '#FF1F9A',
     500: '#E2007D',
-    600: '#AA005E',
-    700: '#72003F',
-    800: '#3A0020',
-    900: '#020001',
-    950: '#000000'
+    600: '#C2006B',
+    700: '#A3005A',
+    800: '#850049',
+    900: '#610035',
+    950: '#52002D',
 };
 
 /** @type {import('tailwindcss').Config} */
