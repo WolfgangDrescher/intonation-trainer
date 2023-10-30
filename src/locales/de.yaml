@@ -16,6 +16,7 @@ instrumentation: Besetzung
 'instrumentation.2Vl,Va,Vc': 2 Vl, Va, Vc
 'instrumentation.2Vl,Va': 2 Vl, Va
 'instrumentation.Fl,Ob,Kl,Fg': Fl, Ob, Kl, Fg
+'instrumentation.Fl,Ob,Hr,Fg': Fl, Ob, Hr, Fg
 nOutOfTotalExercisesFoundForSerachParams: '{n} von {total} Übungen gefunden ({variantCount} von {variantTotal} Varianten)'
 searchText: Suchtext
 clear: Zurücksetzen
