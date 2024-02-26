@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     srcDir: 'src/',
     modules: [
         '@nuxtjs/tailwindcss',
+        '@nuxtjs/i18n',
         '@nuxt/content',
         '@pinia/nuxt',
         'nuxt-icon',
