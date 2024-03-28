@@ -20,7 +20,7 @@
     "nuxt-icon": "^0.6.10"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@8.0.0-rc.5-28274558.b818011",
+    "@nuxtjs/i18n": "^8.2.0",
     "@pinia/nuxt": "^0.5.1",
     "howler": "^2.2.4",
     "intonation-checker": "file:intonation-checker",
