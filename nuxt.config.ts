@@ -45,11 +45,9 @@ export default defineNuxtConfig({
         // defaultLocale: 'de',
         sources: {
             exercises: {
-                driver: 'github',
-                repo: 'WolfgangDrescher/intonation-trainer-data',
-                branch: 'master',
+                driver: 'fs',
                 prefix: '/exercises',
-                dir: "exercises",
+                base: fileURLToPath(new URL('./intonation-trainer-data/exercises', import.meta.url)),
             },
         },
     },
