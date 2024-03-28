@@ -31,6 +31,11 @@ export default defineNuxtConfig({
                 dir: fileURLToPath(new URL('./data', import.meta.url)),
                 maxAge: 3600,
             },
+            {
+                baseURL: 'assets/scores',
+                dir: fileURLToPath(new URL('./intonation-trainer-data/scores', import.meta.url)),
+                maxAge: 3600,
+            },
         ],
     },
     i18n: {

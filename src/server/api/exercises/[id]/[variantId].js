@@ -39,7 +39,7 @@ export default defineEventHandler(async (event) => {
     }
 
     return {
-        scoreUrl: `https://raw.githubusercontent.com/WolfgangDrescher/intonation-trainer-data/master/scores/${exercise.scoreFilename}`,
+        scoreUrl: `/assets/scores/${exercise.scoreFilename}`,
         correctAudioUrl: buildPath(exercise.audioFilename, exercise.id),
         composer: exercise.composer,
         title: exercise.title,
