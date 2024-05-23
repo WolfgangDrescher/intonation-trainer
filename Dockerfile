@@ -2,6 +2,7 @@ FROM node:20-bullseye-slim AS builder
 WORKDIR /app
 COPY . .
 ENV DEPLOY_ENV=prod
+ENV NUXT_PUBLIC_DATA_BASE_URL "https://hear-files.wolfgangdrescher.ch/{0}"
 RUN npm ci
 RUN npm run build
 
